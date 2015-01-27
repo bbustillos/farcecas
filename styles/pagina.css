@@ -1,0 +1,125 @@
+/*Remover el focus*/
+*:focus {outline: none;}
+
+/*tipografia*/
+body {font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;}
+#contenedor h2, #contenedor label {font-family:Georgia, Times, "Times New Roman", serif;}
+.formulario_ayuda {font-size: 11px;}
+
+#contenedor {
+	width: 800px;
+	margin: 0 auto;
+}
+
+/*Estilos del contenedor general*/
+#contenedor ul{
+    width: 800px;
+    list-style-type: none;
+    list-style-position: outside;
+    margin: 0px;
+    padding: 0px;
+}
+
+#contenedor li{
+	padding: 12px;
+	border-bottom: 1px solid #eee;
+	position: relative;
+}
+
+#contenedor li input, #contenedor li select{
+	text-align: left;
+}
+
+#contenedor li:first-child, #contenedor li:last-child{
+	border-bottom: 1px solid #777;
+}
+
+#contenedor h2{
+	margin: 0px;
+	text-align: justify;
+}
+
+#volver {
+	color: #d45252;
+	margin: 5px 0 0 0;
+	display: inline;
+	float: right;
+	margin-top: -20px;
+}
+
+/*Estilos de los campos del formulario*/
+#contenedor label{
+	width: 100px;
+	padding: 0px 0px;
+	display: inline-block;
+	text-align: left;
+	vertical-align: middle;
+	margin: inherit;
+}
+
+#contenedor textarea{
+	height: 30px;
+	vertical-align: middle;
+}
+
+#contenedor label.checklabel{
+	width: 100px;
+	padding: 0px 0px;
+	display: inline-block;
+	text-align: right;
+	margin: inherit;
+}
+
+#contenedor input.checkbox{
+	height: 10px;
+	padding: 5px 8px;
+}
+
+#contenedor select{
+	height: 20px;
+}
+
+#contenedor button{
+	margin-left: 0px;
+}
+
+/*Estilos Visuales*/
+#contenedor input, #contenedor select{
+	border: 1px solid #aaa;
+	box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+	border-radius: 2px;
+}
+
+#contenedor input:focus, #contenedor select:focus{
+	background: #fff;
+	border: 1px solid #555;
+	box-shadow: 0 0 3px #aaa;
+}
+
+/*Estilo del boton*/
+button{
+	background-color: #0033FF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0033FF), to(#0033CC));
+    background: -webkit-linear-gradient(top, #0033FF, #0033CC);
+    background: -moz-linear-gradient(top, #0033FF, #0033CC);
+    background: -ms-linear-gradient(top, #0033FF, #0033CC);
+    background: -o-linear-gradient(top, #0033FF, #0033CC);
+    background: linear-gradient(top, #0033FF, #0033CC);
+    border: 1px solid #0000FF;
+    border-bottom: 1px solid #0000FF;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    box-shadow: inset 0 1px 0 0 #0066CC;
+    -webkit-box-shadow: 0 1px 0 0 #0066CC inset ;
+    -moz-box-shadow: 0 1px 0 0 #0066CC inset;
+    -ms-box-shadow: 0 1px 0 0 #0066CC inset;
+    -o-box-shadow: 0 1px 0 0 #0066CC inset;
+    color: white;
+    font-weight: bold;
+    padding: 6px 20px;
+    text-align: center;
+    text-shadow: 0 -1px 0 #0066CC;
+}

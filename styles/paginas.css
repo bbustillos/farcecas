@@ -1,0 +1,152 @@
+div#messageBox {
+	position: fixed;
+	top: 12px;
+	right: 800px;
+	font-family: Arial, Helvetica, Sans-Serif;
+	font-size: 14px;
+	background-color: #F10909;
+	color: #FFFFFF;
+	padding: 6px;
+	display: none;
+}
+
+ul {
+	background: #efefef; 
+	background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
+	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+	background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
+	padding: 0 20px;
+	border-radius: 10px;  
+	list-style: none;
+	position: relative;
+	display: inline-table;
+}
+#contenedor {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#volver {
+    float: right;
+}
+
+*:focus {  
+    outline: none;  
+}
+
+/* === Form Typography === */  
+body {  
+    font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;  
+}
+  
+h2,  label {  
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+.form_hint, .required_notification {  
+    font-size: 11px;  
+}
+
+/* === List Styles === */  
+ul {  
+    width: 800px;  
+    list-style-type: none;  
+    list-style-position: outside;  
+    margin: 0px;  
+    padding: 0px;  
+}
+
+li {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+li:first-child,  li:last-child {  
+    border-bottom: 1px solid #777;  
+}  
+  
+/* === Form Header === */  
+h2 {  
+    margin: 0;  
+    display: inline;  
+}
+
+/* === Form Elements === */  
+label {  
+    width: 100px;
+    vertical-align: baseline;
+    display: inline-block;  
+}
+
+.checklabel {  
+    width: 55px;
+    padding: 0px 0px;
+}
+
+select {
+    width: 150px;
+    padding: 0px 5px;
+    font-size: 10px;
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+  
+input {  
+    height: 15px;  
+    width: 80px;  
+    padding: 0px 5px;
+    font-size: 10px;
+}
+
+.valorNum{
+    height: 15px;
+    width: 110px;
+    padding: 0px 5px;
+}
+  
+textarea {  
+    padding: 8px;  
+    width: 300px;
+}
+  
+button {  
+    margin-left: 156px;  
+}  
+  
+/* form element visual styles */  
+input,  textarea {  
+    border: 1px solid #aaa;  
+    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;  
+    border-radius: 2px;  
+    padding-right: 30px;  
+    -moz-transition: padding .25s;  
+    -webkit-transition: padding .25s;  
+    -o-transition: padding .25s;  
+    transition: padding .25s;  
+}
+  
+ input:focus,  textarea:focus {  
+    background: #fff;  
+    border: 1px solid #555;  
+    box-shadow: 0 0 3px #aaa;  
+    padding-right: 40px;  
+}  
+
+/* === HTML5 validation styles === */  
+input:required,  textarea:required {  
+    background: #fff url(images/red_asterisk.png) no-repeat 98% center;  
+}  
+
+input:required:valid,  textarea:required:valid {  
+    background: #fff url(images/valid.png) no-repeat 98% center;  
+    box-shadow: 0 0 5px #5cd053;  
+    border-color: #28921f;  
+}  
+
+ input:focus:invalid,  textarea:focus:invalid {  
+    background: #fff url(images/invalid.png) no-repeat 98% center;  
+    box-shadow: 0 0 5px #d45252;  
+    border-color: #b03535;  
+}
+

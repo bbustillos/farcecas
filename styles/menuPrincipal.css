@@ -1,0 +1,127 @@
+* { margin: 0px;
+	padding: 0px; outline: 0;
+}
+html, body { width: 100%;}
+
+body {
+	font-size: 100%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+ul,
+ul ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#menu {  
+	text-align: center;
+	font-size: 0.7em;
+	margin: 20px;
+	width: auto;
+	height: auto;
+	-webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,.73), 0px 0px 18px 0px rgba(0,0,0,.13);
+	-moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,.73), 0px 0px 18px 0px rgba(0,0,0,.13);
+	box-shadow: 0px 1px 3px 0px rgba(0,0,0,.73), 0px 0px 18px 0px rgba(0,0,0,.13);
+}
+#menu ul { 
+	list-style-type: none;float: left;
+}
+#menu ul li.nivel1 { 
+	width: 182px;
+}
+#menu ul li.primera { 
+	border-top: solid 1px #FFF;
+	font-weight: 600;
+	width: 100%
+}
+#menu ul li a {
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	background-color: #616975;
+	border: solid 1px #fff;
+	border-bottom: 1px solid #33373d;
+	border-top: none;
+	padding: 8px;
+	position: relative;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(11, 103, 205)),to(rgb(45, 137, 239)));
+    background-image: -webkit-linear-gradient(top, rgb(11, 103, 205), rgb(45, 137, 239));
+    background-image: -moz-linear-gradient(top, rgb(11, 103, 205), rgb(45, 137, 239));
+    background-image: -o-linear-gradient(top, rgb(11, 103, 205), rgb(45, 137, 239));
+    background-image: -ms-linear-gradient(top, rgb(11, 103, 205), rgb(45, 137, 239));
+    background-image: linear-gradient(top, rgb(11, 103, 205), rgb(45, 137, 239));
+	-webkit-box-shadow: inset 0px 1px 0px 0px #878e98;
+	-moz-box-shadow: inset 0px 1px 0px 0px #878e98;
+	box-shadow: inset 0px 1px 0px 0px #878e98;
+	text-shadow: 0px 1px 0px rgba(0,0,0,.5);
+}
+#menu ul li:hover {
+	position: relative;
+	background-color: #35afe3;
+	color: #878d95;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #6ad2ef;
+	-moz-box-shadow: inset 0px 1px 0px 0px #6ad2ef;
+	box-shadow: inset 0px 1px 0px 0px #6ad2ef;
+}
+#menu ul li a:hover, #menu ul li:hover > a.nivel1 {
+	color: #000;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(122, 176, 235)),to(rgb(150, 189, 232)));
+    background-image: -webkit-linear-gradient(top, rgb(122, 176, 235), rgb(150, 189, 232));
+    background-image: -moz-linear-gradient(top, rgb(122, 176, 235), rgb(150, 189, 232));
+    background-image: -o-linear-gradient(top, rgb(122, 176, 235), rgb(150, 189, 232));
+    background-image: -ms-linear-gradient(top, rgb(122, 176, 235), rgb(150, 189, 232));
+    background-image: linear-gradient(top, rgb(122, 176, 235), rgb(150, 189, 232));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#45c7eb', EndColorStr='#2698db');
+    border-bottom: 1px solid #103c56;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #6ad2ef;
+    -moz-box-shadow: inset 0px 1px 0px 0px #6ad2ef;
+    box-shadow: inset 0px 1px 0px 0px #6ad2ef;
+
+}
+#menu ul li a.nivel1 {
+	display: block!important;
+	display: none;
+	position: relative;
+}
+#menu ul li ul {
+	display: none;
+}
+#menu ul li a:hover ul, #menu ul li:hover > ul {
+	display: block;
+	position: absolute;left: 161px;
+	top:-1px!important;top: -31px;
+}
+#menu ul li ul li a {
+	width: 144px;
+	background-color: #399;
+	color: #FFF;
+}
+#menu ul li ul li a:hover {
+	position: relative;
+	background-color: #6CC;
+	color: #000;
+}
+.menu > li > ul li:hover a,
+.menu > li > ul li:hover a span,
+.menu > li > ul li:hover a:before {
+    color: #32373D;
+}
+table.falsa {
+	border-collapse:collapse;
+	border:0px;
+	float: left;
+	position: relative;
+}
+#contenedor {
+	width: 800px;
+	margin: 0 auto;
+}
+
+.saleh_reg {
+	position: absolute;
+	width: 100%;
+	bottom: 1px;
+	text-align: center;
+	font-size: 50%;
+	color: rgb(#0033CC);
+}
