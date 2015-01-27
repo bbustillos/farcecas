@@ -10,6 +10,7 @@
     // Manejo de asignacion de permisos
     $oPermiso = new Permisos($oConex->userId, $oConex->permisos);
     $oAccessoPaginas = new AccessoPaginas;
+
     $aPermisosUsuario = $oPermiso->permisosGeneral('grilla');
     if (!$aPermisosUsuario) {
         $sPermisoPag = $_GET['pag'];
