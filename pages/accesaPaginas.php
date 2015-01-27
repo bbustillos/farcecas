@@ -10,8 +10,7 @@
     // Manejo de asignacion de permisos
     $oPermiso = new Permisos($oConex->userId, $oConex->permisos);
     $oAccessoPaginas = new AccessoPaginas;
-
-    /*$aPermisosUsuario = $oPermiso->permisosGeneral('grilla');
+    $aPermisosUsuario = $oPermiso->permisosGeneral('grilla');
     if (!$aPermisosUsuario) {
         $sPermisoPag = $_GET['pag'];
         $sPermisoRel = $_GET['rel'];
@@ -28,7 +27,7 @@
         // si existe el valor 2 significaria el tipo de asignacion que se le otorgo al usuario
         // el mismo se deberia almacenar en el objeto conexion para tenerlo en todo lado
         $oConex->almacenaSesion();
-    }*/
+    }
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
