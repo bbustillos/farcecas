@@ -112,33 +112,41 @@
 			$aData = array('CODPAG');
 			$objCon->where('NOMBRE', $nombrePag);
 			$aCodPag = $objCon->get('spaginas');
-			$codPag = $aCodPag[0]['CODPAG'];
+			if (is_array($aCodPag) && count($aCodPag)>0) {
+				$codPag = $aCodPag[0]['CODPAG'];
+			} else {
+				$codPag = null;
+			}
 
-			global $objCon;
-			$aData = array('A.ASIGNACCID', 'A.ASIGNACCESO', 'A.TIPOASIGNACCID', 'A.FECHAINICIO', 'A.FECHAFIN');
-			$objCon->join('members M', 'M.CODPER=A.CODPER', 'INNER');
-			$objCon->where('M.id', $userId);
-			$objCon->where('A.CODPAG', $codPag);
-			$objCon->where('A.ESTADO', 1);
-			$aPermiso = $objCon->get(' sasignaacceso A', 1, $aData);
-			if (is_array($aPermiso) && count($aPermiso)>0) {
-				if ($aPermiso[0]['TIPOASIGNACCID'] == 2) {
-					$todayDate = date('Y-m-d');
+			if ($codPag) {
+				global $objCon;
+				$aData = array('A.ASIGNACCID', 'A.ASIGNACCESO', 'A.TIPOASIGNACCID', 'A.FECHAINICIO', 'A.FECHAFIN');
+				$objCon->join('members M', 'M.CODPER=A.CODPER', 'INNER');
+				$objCon->where('M.id', $userId);
+				$objCon->where('A.CODPAG', $codPag);
+				$objCon->where('A.ESTADO', 1);
+				$aPermiso = $objCon->get(' sasignaacceso A', 1, $aData);
+				if (is_array($aPermiso) && count($aPermiso)>0) {
+					if ($aPermiso[0]['TIPOASIGNACCID'] == 2) {
+						$todayDate = date('Y-m-d');
 
-					$fechaInicio = date('Y-m-d', strtotime($aPermiso[0]['FECHAINICIO']));
-					$fechaFin = date('Y-m-d', strtotime($aPermiso[0]['FECHAFIN']));
-					
-					if (($todayDate >= $fechaInicio) && ($todayDate <= $fechaFin)){
-						return $aPermiso;
+						$fechaInicio = date('Y-m-d', strtotime($aPermiso[0]['FECHAINICIO']));
+						$fechaFin = date('Y-m-d', strtotime($aPermiso[0]['FECHAFIN']));
+						
+						if (($todayDate >= $fechaInicio) && ($todayDate <= $fechaFin)){
+							return $aPermiso;
+						} else {
+							$this->permisoUnicaVez($idAsignacion);
+							return false;
+						}
 					} else {
-						$this->permisoUnicaVez($idAsignacion);
-						return false;
+						return $aPermiso;
 					}
 				} else {
-					return $aPermiso;
+					return false;
 				}
 			} else {
-				return false;
+				return 1;
 			}
 		}
 

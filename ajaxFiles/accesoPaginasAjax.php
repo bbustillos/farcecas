@@ -1,4 +1,6 @@
-<?php 
+<?php
+    ini_set('error_reporting', E_ALL);
+    ini_set('display_errors', True);
     // conexion a bases de datos
     include_once '../classes/db_conexion.php';
     include_once '../classes/class.conexion.php';
@@ -10,6 +12,7 @@
     $oAccessoPaginas = new AccessoPaginas;
     global $oRegistro;
     $oPermisos = new Permisos($oConex->userId, $oConex->permisos);
+    global $objCon;
 
     // Parametros para almacenamiento de procesos
     $sPaginaActual = $oRegistro->obtienePaginaActual();
@@ -19,14 +22,20 @@
         $sAction = $_GET["action"];
         switch ($sAction) {
             case 'list':
-                // Obtener la informacion con filtros
-                $result = $oAccessoPaginas->mostrarAccesoPagina();
+                // Obtenemos la cantidad total de registros
+                $aData = array("COUNT(*) AS TOTAL");
+                $result1 = $objCon->get("saccesopaginas", null, $aData);
+
+                // Obtenemos la cantidad solicitada por la paginacion
+                $start = $_REQUEST["jtStartIndex"];
+                $page = $_REQUEST["jtPageSize"];
+                $objCon->where("1 LIMIT $start, $page");
+                $result = $objCon->get("saccesopaginas");
                 // Devolvemos el valor a la grilla
                 $jTableResult = array();
                 $jTableResult['Result'] = "OK";
                 $jTableResult['Records'] = $result;
-                $jTableResult['TotalRecordCount'] = count($result);
-                print_r($jTableResult['TotalRecordCount']); die;
+                $jTableResult['TotalRecordCount'] = $result1[0]['TOTAL'];
                 $oRegistro->almacenamientoProceso('salehLogProcesos', $ip, $login, $sPaginaActual, $_GET["action"]);
                 print json_encode($jTableResult);
                 break;
@@ -36,6 +45,7 @@
                 foreach ($_POST as $key => $value) {
                     $aData[$key] = $value;
                 }
+
                 // Verificamos si el usuario puede almacenar
                 if(strstr($oConex->permisosGeneral,"A") != false){
                     // Almacenamos la informacion del nuevo Acceso a Pagina

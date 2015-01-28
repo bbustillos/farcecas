@@ -4,7 +4,7 @@ $(document).ready(function () {
     $('#menuAdminContenedor').jtable({
         title: 'Administraci&oacute;n de Men&uacute;s',
         paging: true,
-        pageSize: 10,
+        pageSize: 20,
         multiselect: true,
         columnResizable: false,
         actions: {

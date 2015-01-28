@@ -38,7 +38,7 @@
     <link rel="stylesheet" type="text/css" href="../styles/adminMenu.css">
     <!-- Include one of jTable styles. -->
     <link href="../javascript/jtable/themes/metro/blue/jtable.min.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="../javascript/jtable/jquery-ui-1.11.2.custom/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../javascript/jquery-ui-1.11.2.custom/jquery-ui.min.css" />
     <!-- Include jTable script file. -->
     <script src="../javascript/jqGrid/js/jquery-1.11.0.min.js" type="text/javascript"></script>
     <script src="../javascript/jquery-ui-1.11.2/jquery-ui.js" type="text/javascript"></script>

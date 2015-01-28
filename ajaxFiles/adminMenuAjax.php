@@ -10,6 +10,7 @@
     $oAdminMenu = new AdminMenu;
     global $oRegistro;
     $oPermisos = new Permisos($oConex->userId, $oConex->permisos);
+    global $objCon;
 
     // Parametros para almacenamiento de procesos
     $sPaginaActual = $oRegistro->obtienePaginaActual();
@@ -20,17 +21,23 @@
         $sAction = $_GET["action"];
         switch ($sAction) {
             case 'list':
-                // 1. con los valores POST formar las variables con la informacion correspondiente
-                $sEstado = ($_POST['ESTADO'] != 0)?$_POST['ESTADO']:null;
-                $sMenuTipo = ($_POST['MENUTIPO'] != "")?$_POST['MENUTIPO']:null;
-                // Obtener la informacion con filtros
-                $result = $oAdminMenu->mostrarMenus($sEstado, $sMenuTipo);
+                // Obtenemos la cantidad total de registros
+                $aData = array("COUNT(*) AS TOTAL");
+                $result1 = $objCon->get("sadminmenu", null, $aData);
 
+                global $objCon;
+                // con los valores POST formar las variables con la informacion correspondiente
+                if ($_POST['ESTADO'] != 0) { $objCon->where('ESTADO', $_POST['ESTADO']); }
+                if ($_POST['MENUTIPO'] != 0) { $objCon->where('MENUTIPO', $_POST['MENUTIPO']); }
+                $start = $_REQUEST["jtStartIndex"];
+                $page = $_REQUEST["jtPageSize"];
+                $objCon->where("1 LIMIT $start, $page");
+                $result = $objCon->get('sadminmenu');
                 // Devolvemos el valor a la grilla
                 $jTableResult = array();
                 $jTableResult['Result'] = "OK";
                 $jTableResult['Records'] = $result;
-                $jTableResult['TotalRecordCount'] = count($result);
+                $jTableResult['TotalRecordCount'] = $result1[0]['TOTAL'];
                 $oRegistro->almacenamientoProceso('salehLogProcesos', $ip, $login, $sPaginaActual, $_GET["action"]);
                 print json_encode($jTableResult);
                 break;

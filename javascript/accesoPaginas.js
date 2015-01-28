@@ -5,11 +5,11 @@ $(document).ready(function () {
     $('#accesoPaginasContenedor').jtable({
         title: 'Acceso de P&aacute;ginas',
         paging: true,
-        pageSize: 20,
+        pageSize: 15,
         multiselect: true,
         columnResizable: false,
         actions: {
-            listAction: '../ajaxFiles/accesoPaginasAjax.php?action=list&jtStartIndex=0&jtPageSize=20',
+            listAction: '../ajaxFiles/accesoPaginasAjax.php?action=list',
             createAction: '../ajaxFiles/accesoPaginasAjax.php?action=create',
             updateAction: '../ajaxFiles/accesoPaginasAjax.php?action=update',
             deleteAction: '../ajaxFiles/accesoPaginasAjax.php?action=delete'

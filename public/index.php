@@ -1,6 +1,7 @@
 <?php 
 	include "../classes/class.conexion.php";
 	$oConex = new Conexion;
+	$oConex->sec_session_start();
 ?>
 <!DOCTYPE html>
 <html>

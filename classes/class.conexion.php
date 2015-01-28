@@ -115,19 +115,14 @@ class Conexion
 				$login = $this->usuario;
 				$oRegistro->almacenamientoProceso('salehLogAccesos', $ip, $login);
 				$_SESSION['userId'] = $this->userId;
-				// $this->verificaSucursal();
 				// almacena sesion en base de datos
 				$this->almacenaSesion();
-				// Inicializa la pantalla de Sincronizacion
 				return true;
-				// header('Location:../pagina_inicio.php');
 			} else {
 				return false;
-				// header('Location:../login.php?error=1');
 			}
 		} else {
 			return -1;
-			// echo 'Solicitud incorrecta';
 		}
     }
 
@@ -238,7 +233,6 @@ class Conexion
 		$aData = array('session_obj'=>serialize($this));
 		$objCon->where('id', $user_id);
 		$resp = $objCon->update('members', $aData);
-
 	}
 
 	function obtieneSesion(){
